@@ -23,7 +23,7 @@ namespace Csharppractice.Classes
                 }
                 
             }
-            set
+            protected set
             {
                 if (value > 0)
                 {
@@ -56,6 +56,14 @@ namespace Csharppractice.Classes
         {
             Balance += BalanceToBeAdded;
             return Balance;
+        }
+
+        public class ChildBankAccount : BankAccount
+        {
+            public ChildBankAccount()
+            {
+                Balance = 10;
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Csharppractice.Classes;
+using static Csharppractice.Classes.BankAccount;
 
 namespace Csharppractice
 {
@@ -18,7 +19,12 @@ namespace Csharppractice
 
             var bank = new BankAccount();
             bank.AddBalance(100);
+            
             Console.WriteLine(bank.Balance);
+
+            var child = new ChildBankAccount();
+            child.AddBalance(10);
+            Console.WriteLine(child.Balance);
 
 
 
