@@ -17,7 +17,11 @@ namespace Csharppractice
             //var huh = new SimpleMath();
             //huh.Add(2, 3);
 
-            var bank = new BankAccount();
+            double[] numbers = new double[] { 1, 2, 30, 123, 4002 };
+            var result = SimpleMath.Add(12, 34);
+            Console.WriteLine(result);
+
+            var bank = new BankAccount(1000);
             bank.AddBalance(100);
             
             Console.WriteLine(bank.Balance);
@@ -33,16 +37,30 @@ namespace Csharppractice
 
     public class SimpleMath
     {
-        public void Add(int number1, int number2)
+        public static void Add(int number1, int number2)
         {
             if (number1 == number2)
             {
-                Console.WriteLine("Nice!!!");
+                Console.WriteLine("Nice!");
+              
             }
             else
             {
                 Console.WriteLine("Wrong!!");
             }
+        }
+
+
+        //method overloading, means that thye are defined diffently
+        public static double Add(double[] numbers)
+        {
+            double result = 0;
+            foreach (var d in numbers)
+            {
+                result += d;
+            }
+
+            return result;
         }
     }
 }
